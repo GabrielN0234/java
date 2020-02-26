@@ -28,6 +28,15 @@ public class UserController {
         return converter.toResponse(service.find(id));
     }
 
+    @RequestMapping(path = "/{email}/{pass}", method = RequestMethod.GET)
+    public UserDTO.UserResponse login(
+            @PathVariable("email") String email,
+            @PathVariable("pass") String password) {
+
+        return converter.toResponse(service.login(email,password));
+    }
+
+
     @RequestMapping(path = "/", method = RequestMethod.POST)
     public UserDTO.UserResponse save(@RequestBody UserDTO.UserRequest user) {
 

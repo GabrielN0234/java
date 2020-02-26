@@ -32,6 +32,17 @@ public class UserService {
     }
 
 
+    public Usercl login(String email, String pass) {
+        List<Usercl> users = findAll();
+        for (int i = 0; i<users.size(); i++){
+            if(users.get(i).getEmail().equals(email)  && users.get(i).getPassword().equals(pass) ){
+                return find(users.get(i).getId());
+            }
+        }
+       return null;
+    }
+
+
     public Usercl find(Integer id) {
         return repository
                 .findById(id)

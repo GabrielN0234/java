@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -18,15 +18,15 @@ public class Issuecl {
     @NotNull
     private String Descriptionme;
 
-    @Column(name = "ReportNumber")
+    @Column(name = "Reportnumber")
     @NotNull
     @Size(max = 100)
-    private int ReportNumber;
+    private String ReportNumber;
 
     @Column(name = "Registedtimestamp")
     @NotNull
     @Size(max = 100)
-    private Date Registedtimestamp;
+    private String Registedtimestamp;
 
     @Column(name = "Address")
     @NotNull
@@ -39,7 +39,8 @@ public class Issuecl {
     private String Contactphone;
 
     @Column(name = "Contactemail")
-    @Size(max = 100)
+    @Email
+    @NotNull
     private String Contactemail;
 
     @Column(name = "Status")
@@ -78,19 +79,19 @@ public class Issuecl {
         Descriptionme = descriptionme;
     }
 
-    public int getReportNumber() {
+    public String getReportNumber() {
         return ReportNumber;
     }
 
-    public void setReportNumber(int reportNumber) {
+    public void setReportNumber(String reportNumber) {
         ReportNumber = reportNumber;
     }
 
-    public Date getRegistedtimestamp() {
+    public String getRegistedtimestamp() {
         return Registedtimestamp;
     }
 
-    public void setRegistedtimestamp(Date registedtimestamp) {
+    public void setRegistedtimestamp(String registedtimestamp) {
         Registedtimestamp = registedtimestamp;
     }
 
