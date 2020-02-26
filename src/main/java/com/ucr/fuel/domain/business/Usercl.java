@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -50,6 +51,19 @@ public class Usercl {
     @Email
     @NotNull
     private String Email;
+
+    @OneToMany(mappedBy = "usercl", fetch = FetchType.LAZY)
+    private List<Issuecl> issues;
+
+    public List<Issuecl> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(List<Issuecl> issues) {
+        this.issues = issues;
+    }
+
+
 
     public Integer getId() {
         return Id;
@@ -136,17 +150,18 @@ public class Usercl {
                 getAddress().equals(usercl.getAddress()) &&
                 getPhone().equals(usercl.getPhone()) &&
                 getSecondcontact().equals(usercl.getSecondcontact()) &&
-                getEmail().equals(usercl.getEmail());
+                getEmail().equals(usercl.getEmail()) &&
+                getIssues().equals(usercl.getIssues());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getPassword(), getFirstsurname(), getSecondsurname(), getAddress(), getPhone(), getSecondcontact(), getEmail());
+        return Objects.hash(getId(), getName(), getPassword(), getFirstsurname(), getSecondsurname(), getAddress(), getPhone(), getSecondcontact(), getEmail(), getIssues());
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Usercl{" +
                 "Id=" + Id +
                 ", Name='" + Name + '\'' +
                 ", Password='" + Password + '\'' +
@@ -156,6 +171,7 @@ public class Usercl {
                 ", phone='" + phone + '\'' +
                 ", Secondcontact='" + Secondcontact + '\'' +
                 ", Email='" + Email + '\'' +
+                ", issues=" + issues +
                 '}';
     }
 }

@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea17cd79-4847-4279-a85a-ca8405006219" name="Default Changelist" comment="" />
+    <list default="true" id="ea17cd79-4847-4279-a85a-ca8405006219" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ucr/fuel/domain/business/Issuecl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ucr/fuel/domain/business/Usercl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ucr/fuel/domain/business/Usercl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/fuel-control.kotlin_module" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,11 +33,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ucr.fuel.domain.business" />
       <recent name="com.ucr.fuel.controller" />
       <recent name="com.ucr.fuel.converter" />
       <recent name="com.ucr.fuel.service" />
       <recent name="com.ucr.fuel.repository" />
-      <recent name="com.ucr.fuel.dto" />
     </key>
   </component>
   <component name="RunManager">
@@ -74,30 +86,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="153" y="52" key="#com.intellij.ide.util.MemberChooser" timestamp="1582672216843">
+    <state x="153" y="52" key="#com.intellij.ide.util.MemberChooser" timestamp="1582729503783">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="153" y="52" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582672216843" />
+    <state x="153" y="52" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582729503783" />
     <state x="182" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582694330173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="182" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1582694330173" />
-    <state width="1323" height="247" key="GridCell.Tab.0.bottom" timestamp="1582696224634">
+    <state width="1323" height="316" key="GridCell.Tab.0.bottom" timestamp="1582729545559">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="247" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582696224634" />
-    <state width="1323" height="247" key="GridCell.Tab.0.center" timestamp="1582696224634">
+    <state width="1323" height="316" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582729545559" />
+    <state width="1323" height="316" key="GridCell.Tab.0.center" timestamp="1582729545559">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="247" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582696224634" />
-    <state width="1323" height="247" key="GridCell.Tab.0.left" timestamp="1582696224633">
+    <state width="1323" height="316" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582729545559" />
+    <state width="1323" height="316" key="GridCell.Tab.0.left" timestamp="1582729545559">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="247" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582696224633" />
-    <state width="1323" height="247" key="GridCell.Tab.0.right" timestamp="1582696224634">
+    <state width="1323" height="316" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582729545559" />
+    <state width="1323" height="316" key="GridCell.Tab.0.right" timestamp="1582729545559">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="247" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582696224634" />
+    <state width="1323" height="316" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582729545559" />
     <state x="44" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1582633665549">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
