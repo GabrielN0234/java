@@ -1,10 +1,10 @@
 package com.ucr.fuel.controller;
 
 
-import com.ucr.fuel.converter.IssueRestConverter;
-import com.ucr.fuel.domain.business.Issuecl;
-import com.ucr.fuel.dto.IssueDTO;
-import com.ucr.fuel.service.IssueService;
+import com.ucr.fuel.converter.CommentRestConverter;
+import com.ucr.fuel.domain.business.Comment;
+import com.ucr.fuel.dto.CommentDTO;
+import com.ucr.fuel.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,31 +12,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(path = "/issues")
+@RequestMapping(path = "/comments")
 @CrossOrigin
-public class IssueController {
+public class CommentController {
 
     @Autowired
-    private IssueService service;
+    private CommentService service;
 
     @Autowired
-    private IssueRestConverter converter;
+    private CommentRestConverter converter;
 
     @RequestMapping(path = "/{Id}", method = RequestMethod.GET)
-    public IssueDTO.IssueResponse findById(
+    public CommentDTO.CommentResponse findById(
             @PathVariable("Id") Integer id) {
         return converter.toResponse(service.find(id));
     }
 
     @RequestMapping(path = "/", method = RequestMethod.POST)
-    public IssueDTO.IssueResponse save(@RequestBody IssueDTO.IssueRequest issue) {
-        return converter.toResponse(service.save(converter.fromRequest(issue)));
+    public CommentDTO.CommentResponse save(@RequestBody CommentDTO.CommentRequest comment) {
+        return converter.toResponse(service.save(converter.fromRequest(comment)));
     }
 
     @RequestMapping(path = "/{Id}", method = RequestMethod.PUT)
-    public IssueDTO.IssueResponse update(@PathVariable("Id") Integer id,
-                                    @RequestBody IssueDTO.IssueRequest issue) {
-        Issuecl toUpdate = converter.fromRequest(issue);
+    public CommentDTO.CommentResponse update(@PathVariable("Id") Integer id,
+                                             @RequestBody CommentDTO.CommentRequest comment) {
+        Comment toUpdate = converter.fromRequest(comment);
         toUpdate.setId(id);
         return converter.toResponse(service.update(toUpdate));
     }
@@ -47,7 +47,7 @@ public class IssueController {
     }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public List<IssueDTO.IssueResponse> findAll() {
+    public List<CommentDTO.CommentResponse> findAll() {
         return service.findAll().stream().map(it -> converter.toResponse(it))
                 .collect(Collectors.toList());
     }

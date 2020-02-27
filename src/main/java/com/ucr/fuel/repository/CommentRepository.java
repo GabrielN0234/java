@@ -1,11 +1,11 @@
 package com.ucr.fuel.repository;
 
-import com.ucr.fuel.domain.business.Issuecl;
+import com.ucr.fuel.domain.business.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface IssueRepository extends JpaRepository<Issuecl, Integer> {
+public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
 }

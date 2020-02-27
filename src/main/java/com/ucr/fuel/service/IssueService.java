@@ -1,10 +1,8 @@
 package com.ucr.fuel.service;
 
 
-import com.ucr.fuel.domain.business.Driver;
 import com.ucr.fuel.domain.business.Issuecl;
 import com.ucr.fuel.exceptions.RecordNotFoundException;
-import com.ucr.fuel.repository.DriverRepository;
 import com.ucr.fuel.repository.IssueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +36,7 @@ public class IssueService {
         return repository
                 .findById(id)
                 .orElseThrow(
-                        () -> new RecordNotFoundException(Driver.class, id));
+                        () -> new RecordNotFoundException(Issuecl.class, id));
     }
 }
 

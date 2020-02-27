@@ -1,10 +1,10 @@
 package com.ucr.fuel.controller;
 
 
-import com.ucr.fuel.converter.IssueRestConverter;
-import com.ucr.fuel.domain.business.Issuecl;
-import com.ucr.fuel.dto.IssueDTO;
-import com.ucr.fuel.service.IssueService;
+import com.ucr.fuel.converter.ServiceRestConverter;
+import com.ucr.fuel.domain.business.Servicecl;
+import com.ucr.fuel.dto.ServiceDTO;
+import com.ucr.fuel.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,31 +12,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(path = "/issues")
+@RequestMapping(path = "/serivices")
 @CrossOrigin
-public class IssueController {
+public class ServiceController {
 
     @Autowired
-    private IssueService service;
+    private ServiceService service;
 
     @Autowired
-    private IssueRestConverter converter;
+    private ServiceRestConverter converter;
 
     @RequestMapping(path = "/{Id}", method = RequestMethod.GET)
-    public IssueDTO.IssueResponse findById(
+    public ServiceDTO.ServiceResponse findById(
             @PathVariable("Id") Integer id) {
         return converter.toResponse(service.find(id));
     }
 
     @RequestMapping(path = "/", method = RequestMethod.POST)
-    public IssueDTO.IssueResponse save(@RequestBody IssueDTO.IssueRequest issue) {
-        return converter.toResponse(service.save(converter.fromRequest(issue)));
+    public ServiceDTO.ServiceResponse save(@RequestBody ServiceDTO.ServiceRequest servic) {
+        return converter.toResponse(service.save(converter.fromRequest(servic)));
     }
 
     @RequestMapping(path = "/{Id}", method = RequestMethod.PUT)
-    public IssueDTO.IssueResponse update(@PathVariable("Id") Integer id,
-                                    @RequestBody IssueDTO.IssueRequest issue) {
-        Issuecl toUpdate = converter.fromRequest(issue);
+    public ServiceDTO.ServiceResponse update(@PathVariable("Id") Integer id,
+                                             @RequestBody ServiceDTO.ServiceRequest servic) {
+        Servicecl toUpdate = converter.fromRequest(servic);
         toUpdate.setId(id);
         return converter.toResponse(service.update(toUpdate));
     }
@@ -47,7 +47,7 @@ public class IssueController {
     }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public List<IssueDTO.IssueResponse> findAll() {
+    public List<ServiceDTO.ServiceResponse> findAll() {
         return service.findAll().stream().map(it -> converter.toResponse(it))
                 .collect(Collectors.toList());
     }

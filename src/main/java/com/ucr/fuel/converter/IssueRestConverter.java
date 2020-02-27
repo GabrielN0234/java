@@ -1,12 +1,8 @@
 package com.ucr.fuel.converter;
 
 import com.ucr.fuel.domain.business.Issuecl;
-import com.ucr.fuel.domain.business.Route;
 import com.ucr.fuel.dto.IssueDTO;
-import com.ucr.fuel.dto.RouteDTO;
-import com.ucr.fuel.service.DriverService;
 import com.ucr.fuel.service.UserService;
-import com.ucr.fuel.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

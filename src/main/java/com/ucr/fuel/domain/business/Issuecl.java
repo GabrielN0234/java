@@ -5,10 +5,11 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Issuecl")
+@Table(name = "issuecl")
 public class Issuecl {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,6 +49,8 @@ public class Issuecl {
     @Size(max = 100)
     private String Status;
 
+    @OneToMany(mappedBy = "issuecl", fetch = FetchType.LAZY)
+    private List<Comment> coments;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Userid", nullable = false)
